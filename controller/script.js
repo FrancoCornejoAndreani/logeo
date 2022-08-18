@@ -10,25 +10,25 @@ function getLogin(req, res) {
     });
   } else {
       console.log("user NO logueado");
-      res.sendFile("C:/Users/fedec/OneDrive/Escritorio/DesafioWebSocket/ProgramacionBackEnd/Passport/views/login.html");
+      res.sendFile(__dirname + "/views/login.html");
   }
 }
 
 function getSignup(req, res) {
-  res.sendFile("C:/Users/fedec/OneDrive/Escritorio/DesafioWebSocket/ProgramacionBackEnd/Passport/views/register.html");
+  res.sendFile(__dirname + "/views/register.html");
 }
 
 function postRegister(req, res) {
 
     let user = req.user
 
-    res.sendFile("C:/Users/fedec/OneDrive/Escritorio/DesafioWebSocket/ProgramacionBackEnd/Passport/views/index.html")
+    res.sendFile(__dirname + "/views/index.html")
 }
 
 function postLogin(req, res) {
     let user = req.user
     
-    res.sendFile("C:/Users/fedec/OneDrive/Escritorio/DesafioWebSocket/ProgramacionBackEnd/Passport/views/index.html")
+    res.sendFile(__dirname + "/views/index.html")
 }
 
 function getFailsignup(req, res) {
@@ -47,7 +47,7 @@ function getFaillogin(req, res) {
 
 function getLogout(req, res) {
   req.logout((e)=>{console.log(e)});
-  res.sendFile("C:/Users/fedec/OneDrive/Escritorio/DesafioWebSocket/ProgramacionBackEnd/Passport/views/index.html");
+  res.sendFile(__dirname + "/views/index.html");
 }
 
 module.exports = {
