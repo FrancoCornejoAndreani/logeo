@@ -1,3 +1,5 @@
+const path = require("path")
+
 function getLogin(req, res) {
   if (req.isAuthenticated()) {
     let user = req.user;
@@ -10,25 +12,25 @@ function getLogin(req, res) {
     });
   } else {
       console.log("user NO logueado");
-      res.sendFile(__dirname + "/views/login.html");
+      res.sendFile(path.join(__dirname, "../views/login.html"));
   }
 }
 
 function getSignup(req, res) {
-  res.sendFile(__dirname + "/views/register.html");
+  res.sendFile(path.join(__dirname, "../views/register.html"));
 }
 
 function postRegister(req, res) {
 
     let user = req.user
 
-    res.sendFile(__dirname + "/views/index.html")
+    res.sendFile(path.join(__dirname, "../views/index.html"))
 }
 
 function postLogin(req, res) {
     let user = req.user
     
-    res.sendFile(__dirname + "/views/index.html")
+    res.sendFile(path.join(__dirname, "../views/index.html"))
 }
 
 function getFailsignup(req, res) {
@@ -47,7 +49,7 @@ function getFaillogin(req, res) {
 
 function getLogout(req, res) {
   req.logout((e)=>{console.log(e)});
-  res.sendFile(__dirname + "/views/index.html");
+  res.sendFile(path.join(__dirname, "../views/index.html"));
 }
 
 module.exports = {
